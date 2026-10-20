@@ -6,7 +6,7 @@
 #include <vector>
 
 #include <ctime> // needed for todays year
-constexpr int ALAN_TURING_GEBURTSJAHR = 1912; //Globale Variable für Turings-Alter 
+constexpr int ALAN_TURING_GEBURTSJAHR = 1912; //Globale Variable für Geburtsjahr von Turing
 
 // Druckt einen Text aus
 void drucke_text(const std::string& text);
@@ -35,7 +35,7 @@ int get_aktuelles_jahr() {
 }
 
 void alter_von_alan_turing_erraten() {
-  int alter_alan_turing_heute = get_aktuelles_jahr() - ALAN_TURING_GEBURTSJAHR;
+  const int alter_alan_turing_heute = get_aktuelles_jahr() - ALAN_TURING_GEBURTSJAHR; //const sicher das Alter gegen versehentliches Überschreiben
   drucke_text("Geben Sie einen Tipp ab, wie alt Turing heute wäre");
   int user_input = lies_ganzzahl();
   while (user_input != alter_alan_turing_heute){
@@ -47,7 +47,6 @@ void alter_von_alan_turing_erraten() {
     user_input = lies_ganzzahl();
   }
   drucke_text("Korrekt, Alan Turing wäre heute genauso alt");
-  return;
 }
 
 

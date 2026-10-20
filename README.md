@@ -3,9 +3,9 @@
 Dieses Repository enthält die C++ Programmieraufgaben für das Modul Algorithmen und Programmierung im Wintersemester 2026/2027 an der Universität Bonn.
 
 ## Studenteninfo
-* **Name:**             Marc Beigel
-* **Matrikelnummer:**   50370681
-* **E-Mail:**           s87mbeig@uni-bonn.de
+* **Name:**  Marc Beigel
+* **Matrikelnummer:**  50370681
+* **E-Mail:**  s87mbeig@uni-bonn.de
 
 ## Repository-Struktur
 Jedes Übungsblatt besitzt einen eigenen Unterordner (z.B. `Blatt01/`, `Blatt02/`). 
@@ -24,12 +24,12 @@ make
 make clean
 ```
 
-Standardmäßig werden folgende Flags genutzt: 
--std=c++20
--Wall
--Wextra
--Wpedantic
--Wshadow
+Standardmäßig werden folgende Flags genutzt:  
+-std=c++20  
+-Wall  
+-Wextra  
+-Wpedantic  
+-Wshadow  
 
 Es gibt ein automatisches Build-Skript für BlattX Subdirectories:
 

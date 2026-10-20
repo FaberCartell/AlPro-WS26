@@ -4,7 +4,7 @@ CXX = clang++
 CXXFLAGS = -std=c++20 -Wextra -Wall -Wpedantic -Wshadow
 
 # Finde alle .cpp Dateien im aktuellen Verzeichnis
-SOURCES = $(wildcard *.cpp)
+SOURCES = $(shell find . -name "*.cpp")
 # Erzeuge für jede .cpp Datei ein entsprechendes .out Target
 TARGETS = $(SOURCES:.cpp=.out)
 
@@ -17,4 +17,9 @@ all: $(TARGETS)
 
 # Räumt generierte Dateien auf (aufrufbar mit 'make clean')
 clean:
-	rm -f *.out *.o core vgcore.* callgrind.out.* valgrind.log
+	find . -name "*.out" -type f -delete
+	find . -name "*.o" -type f -delete
+	find . -name "core" -type f -delete
+	find . -name "vgcore.*" -type f -delete
+	find . -name "callgrind.out.*" -type f -delete
+	find . -name "valgrind.log" -type f -delete

@@ -1,0 +1,52 @@
+#Vibecoded .gitignore
+
+# ==========================================
+# Executables / Ausführbare Dateien
+# ==========================================
+*.out
+*.exe
+*.app
+/main
+/app
+/a.out
+
+# ==========================================
+# Build-Artefakte & Objektdateien
+# ==========================================
+*.o
+*.obj
+*.so
+*.dylib
+*.a
+build/
+bin/
+out/
+
+# ==========================================
+# C++ Debugging & Memory-Profiling
+# ==========================================
+core
+core.*
+vgcore.*
+valgrind.log
+callgrind.out.*
+*.d
+
+# ==========================================
+# Editor & IDE-spezifische Dateien
+# ==========================================
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+*.code-workspace
+.idea/
+cmake-build-*/
+.DS_Store
+Thumbs.db
+
+# ==========================================
+# Sonstiges / temporäre Dateien
+# ==========================================
+*.log
+*.tmp

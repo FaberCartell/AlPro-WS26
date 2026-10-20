@@ -1,4 +1,4 @@
-// Zur Blatt 02 Aufgabe 04
+// Zu Blatt 02 Aufgabe 03
 
 #include <cmath>
 #include <iostream>

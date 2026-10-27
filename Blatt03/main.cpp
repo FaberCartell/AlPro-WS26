@@ -4,21 +4,17 @@
 
 
 
-/*Aufgabe 1 (Zahlensysteme):
-*
+/*
+*Aufgabe 1 (Zahlensysteme):
 *42_10 = 00101010_2 = 0x2A
 *11001100_2 = 0xCC = 204_10
-*0xAD = 10101101_2 = 173*/
+*0xAD = 10101101_2 = 173
+*/
 
 
-double get_accuracy(){
-    double epsilon;
-    std :: cout << "Maximal zulässige relative Abweichung in % (z. B. 0.005): ";
-    std :: cin >> epsilon;
-    return  epsilon / 100.0; 
-}
 
-double sin(double input_radians){
+
+double sin(double input_radians, double epsilon){
     const double pi = std::numbers::pi;
     //Normalisiere zunächst um catastrophic cancellation zu vermeiden:
     double k = std::floor(input_radians/(2.0*pi));
@@ -32,7 +28,6 @@ double sin(double input_radians){
     }else if(input_radians > pi/2){
         input_radians -= 2.0*(input_radians - pi/2.0);
     }
-    double epsilon = get_accuracy();
     double taylorsum = 0;
     double a_i = input_radians;
     int i = 1;
@@ -44,10 +39,19 @@ double sin(double input_radians){
     return taylorsum;
 }
 
+double cos(double input_radians, double epsilon){
+    return sin(input_radians + std::numbers::pi /2.0, epsilon );
+}
 
+double tan(double input_radians, double epsilon){
+    return sin(input_radians, epsilon)/cos(input_radians, epsilon);
+}
+
+double cot(double input_radians, double epsilon){
+    return 1/tan(input_radians, epsilon);
+}
 
 
 int main() {
-    std::cout << sin(std::numbers::pi) <<"\n";
     return 0; 
 }

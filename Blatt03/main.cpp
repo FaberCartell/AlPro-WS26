@@ -52,6 +52,19 @@ double cot(double input_radians, double epsilon){
 }
 
 
+double sqrt(double input, double epsilon){
+    if(input < 0){
+        std::cout << "Die Wurzel ex. über den reellen Zahlen nicht";
+        return -1; 
+    }
+    double t = input; 
+    while (std::abs(t*t - input) < epsilon * input){
+        t = (t + input/t)/2 
+    }
+    return t; 
+}
+
+
 int main() {
     return 0; 
 }

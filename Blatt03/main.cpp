@@ -99,9 +99,6 @@ double sqrt(double input){
     return sqrt(input, DEFAULT_EPSILON);
 }
 
-int main() {
-    return 0; 
-}
 
 
 //vibecoded slop
@@ -200,4 +197,11 @@ void run_all_tests() {
     std::cout << "========================================================\n";
     std::cout << "                 ENDE DER TEST SUITE\n";
     std::cout << "========================================================\n";
+}
+
+
+
+int main() {
+    run_all_tests();
+    return 0; 
 }

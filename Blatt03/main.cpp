@@ -63,7 +63,10 @@ double cot(double input_radians, double epsilon){
 double sqrt(double input, double epsilon){
     if(input < 0){
         //std::cout << "Die Wurzel ex. über den reellen Zahlen nicht";
-        return -1; 
+        return NAN; 
+    }
+    if (input == 0){
+        return 0;
     }
     double t = input; 
     //Heronverfahren
@@ -90,7 +93,7 @@ double cot(double input){
 }
 
 double sqrt(double input){
-    return sqrt(input, DEFAULT_EPSILON)
+    return sqrt(input, DEFAULT_EPSILON);
 }
 
 int main() {

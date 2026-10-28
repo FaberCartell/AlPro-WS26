@@ -1,4 +1,4 @@
-# BlattXX
+# Blatt03
 
 ## Autor
 
@@ -11,19 +11,19 @@
 
 ## Bearbeitungsstatus
 
-- [] Aufgabe 1:
-- [] Aufgabe 2:
-- [] Aufgabe 3:
-- [] Aufgabe 4:
+- [x] Aufgabe 1: Siehe Kommentar im Head
+- [x] Aufgabe 2: 
+- [x] Aufgabe 3: Implementiert
+- [x] Aufgabe 4: Implementiert 
 
 ## Besonderheiten zur Implementierung
 
 - **Verwendete Algorithmen/Datenstrukturen:**
-  - Keine
+  - Heron-Verfahren für Wurzel, Taylorreihe für Sinus
 - **Abweichungen:**
-  - Keine
+  - In Aufgabe 3 zunächst mit mitgegebener Fehlertoleranz gestartet
 - **Zusätzliche Annahmen:**
-  - Keine
+  - Relativer Fehler statt absoluter Fehler 
 
 ## Bekannte Fehler
 

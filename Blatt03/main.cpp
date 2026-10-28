@@ -89,6 +89,10 @@ double cot(double input){
     return cot(input, DEFAULT_EPSILON);
 }
 
+double sqrt(double input){
+    return sqrt(input, DEFAULT_EPSILON)
+}
+
 int main() {
     return 0; 
 }

@@ -30,17 +30,17 @@ double sin(double input_radians, double epsilon){
     if(input_radians > 1.5 * pi){
         input_radians -= 2.0*pi;
     }else if(input_radians > pi) {
-        input_radians -= (2*(input_radians - 1.5 * pi) + 2.0*pi);
-
+        input_radians -= (2*(input_radians - 1.5 * pi) + 2.0*pi); //nutze Symmetrieachse 3/2 pi
     }else if(input_radians > pi/2){
-        input_radians -= 2.0*(input_radians - pi/2.0);
+        input_radians -= 2.0*(input_radians - pi/2.0); //nutze Symmetrieachse 1/2 pi
     }
     double taylorsum = 0;
     double a_i = input_radians;
     int i = 1;
-    while ( std::abs(a_i) > epsilon * std::abs(taylorsum)){
-        taylorsum += a_i; 
-        a_i = -a_i * input_radians*input_radians / (2.0*i*(2.0*i + 1.0));
+    // Abbruchbedingung abhängig vom relativen Fehler
+    while ( std::abs(a_i) > epsilon * std::abs(taylorsum)){ // Abbruch der Taylorreihe, falls die contribution von einzelnem Taylorglied klein
+        taylorsum += a_i;  // summiert die Taylorglieder 
+        a_i = -a_i * input_radians*input_radians / (2.0*i*(2.0*i + 1.0)); //berechne neues Taylorglied durch Rekursion
         i++;
     }
     return taylorsum;
@@ -61,11 +61,12 @@ double cot(double input_radians, double epsilon){
 
 double sqrt(double input, double epsilon){
     if(input < 0){
-        std::cout << "Die Wurzel ex. über den reellen Zahlen nicht";
+        //std::cout << "Die Wurzel ex. über den reellen Zahlen nicht";
         return -1; 
     }
     double t = input; 
-    while (std::abs(t*t - input) > epsilon * input){
+    //Heronverfahren
+    while (std::abs(t*t - input) > epsilon * input){ //Abbruch bei kleinem relativen Fehler
         t = (t + input/t)/2.0;
     }
     return t; 

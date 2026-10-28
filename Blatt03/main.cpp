@@ -12,6 +12,13 @@
 */
 
 
+double radians_to_degree(double input_radians){
+    return input_radians * 360 / (2 * std::numbers::pi);
+}
+
+double degree_to_radians(double input_degrees){
+    return 2 * input_degrees * std::numbers::pi /360;
+}
 
 
 double sin(double input_radians, double epsilon){
@@ -58,8 +65,8 @@ double sqrt(double input, double epsilon){
         return -1; 
     }
     double t = input; 
-    while (std::abs(t*t - input) < epsilon * input){
-        t = (t + input/t)/2 
+    while (std::abs(t*t - input) > epsilon * input){
+        t = (t + input/t)/2.0;
     }
     return t; 
 }
